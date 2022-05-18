@@ -22,15 +22,15 @@ jobs:
           echo $GITHUB_ENV
           echo "GIT_BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
           cat $GITHUB_ENV
-          
-       - name: 'Load env'
-         uses: xom9ikk/dotenv@v1.0.2
-         with:
+
+      - name: 'Load env'
+        uses: xom9ikk/dotenv@v1.0.2
+        with:
           path: ${{ env.GIT_BRANCH }}
           
-       - name: 'Test 2'
-         shell: bash
-         run: |
+      - name: 'Test 2'
+        shell: bash
+        run: |
             echo ${{ env.TEST }}
             echo $TEST
             echo ${{ env.MEM }}
